@@ -28,7 +28,6 @@ public class PlayerService {
 
     public Player save(Player player) {
         return playerRepository.save(player);
-
     }
 
     public Player update(Player player) {

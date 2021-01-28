@@ -20,6 +20,7 @@ public class Player extends Entity {
         return questList;
     }
 
+
     public void setQuestList(List<Quest> questList) {
         this.questList = questList;
     }
@@ -38,14 +39,6 @@ public class Player extends Entity {
         this.nextLevelExp = nextLevelExp;
         this.itemList = itemList;
         this.questList = questList;
-    }
-
-    public Player(int health, int attack, String name, Float critical, int level, Long id, int experience, int nextLevelExp, List<Item> itemList) {
-        super(health, attack, name, critical, level);
-        this.id = id;
-        this.experience = experience;
-        this.nextLevelExp = nextLevelExp;
-        this.itemList = itemList;
     }
 
     public List<Item> getItemList() {
