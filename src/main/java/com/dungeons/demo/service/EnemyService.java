@@ -4,6 +4,9 @@ import com.dungeons.demo.model.Enemy;
 import com.dungeons.demo.repository.EnemyRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class EnemyService {
     private EnemyRepository enemyRepository;
@@ -30,5 +33,14 @@ public class EnemyService {
 
     public void deleteById(Long id) {
         enemyRepository.deleteById(id);
+    }
+
+    public List<Enemy> findAll() {
+        return enemyRepository.findAll();
+    }
+
+    public Optional<Enemy> findById(Long id) {
+
+        return enemyRepository.findById(id);
     }
 }
