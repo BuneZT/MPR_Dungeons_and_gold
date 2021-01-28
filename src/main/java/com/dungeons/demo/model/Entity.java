@@ -19,6 +19,9 @@ public class Entity {
         return health;
     }
 
+    public Entity() {
+    }
+
     public void setHealth(int health) {
         this.health = health;
     }

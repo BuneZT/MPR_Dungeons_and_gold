@@ -33,6 +33,14 @@ public class Quest {
         this.playerList = playerList;
     }
 
+
+    public Quest(Long id, int enemyCount, int rewardExp, int rewardGold) {
+        this.id = id;
+        this.enemyCount = enemyCount;
+        this.rewardExp = rewardExp;
+        this.rewardGold = rewardGold;
+    }
+
     public Quest(Long id, int enemyCount, int rewardExp, int rewardGold, Enemy enemy, List<Player> playerList) {
         this.id = id;
         this.enemyCount = enemyCount;

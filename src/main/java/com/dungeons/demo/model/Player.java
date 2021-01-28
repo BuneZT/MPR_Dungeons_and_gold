@@ -20,6 +20,9 @@ public class Player extends Entity {
         return questList;
     }
 
+    public Player() {
+        super();
+    }
 
     public void setQuestList(List<Quest> questList) {
         this.questList = questList;
