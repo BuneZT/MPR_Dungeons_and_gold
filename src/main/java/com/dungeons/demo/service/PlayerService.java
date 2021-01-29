@@ -1,5 +1,6 @@
 package com.dungeons.demo.service;
 
+import com.dungeons.demo.model.Enemy;
 import com.dungeons.demo.model.Player;
 import com.dungeons.demo.repository.PlayerRepository;
 import org.springframework.stereotype.Service;
@@ -41,5 +42,19 @@ public class PlayerService {
 
     public void deleteById(Long id) {
         playerRepository.deleteById(id);
+    }
+
+    public String processWin(Player player, Enemy enemy) {
+        player.setExperience(player.getExperience() + enemy.getRewardExp());
+        player.setGold(player.getGold() + enemy.getRewardGold());
+        this.update(player);
+        return "Wygrana!";
+    }
+
+    public String processFailure(Player player, Enemy enemy) {
+        player.setExperience(player.getExperience() - enemy.getRewardExp());
+        player.setGold(player.getGold() - enemy.getRewardGold());
+        this.update(player);
+        return "Przegrana!";
     }
 }

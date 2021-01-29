@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @javax.persistence.Entity
-public class Enemy extends Entity  {
+public class Enemy extends Entity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private  int rewardGold;
+    private int rewardGold;
     private int rewardExp;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "enemy")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "enemy")
     private List<Quest> questList = new ArrayList<>();
 
     public List<Quest> getQuestList() {
@@ -25,6 +25,7 @@ public class Enemy extends Entity  {
     public Enemy() {
         super();
     }
+
     public Enemy(int health, int attack, String name, Float critical, int level, Long id, int rewardGold, int rewardExp, List<Quest> questList) {
         super(health, attack, name, critical, level);
         this.id = id;

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 @Service
 public class EnemyService {
@@ -42,5 +43,11 @@ public class EnemyService {
     public Optional<Enemy> findById(Long id) {
 
         return enemyRepository.findById(id);
+    }
+
+    public Optional<Enemy> getRandomEnemy(int level) {
+        Random rand = new Random(); //instance of random class
+
+        return enemyRepository.getRandomEnemy(level, rand.nextInt());
     }
 }

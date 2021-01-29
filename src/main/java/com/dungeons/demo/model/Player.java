@@ -11,6 +11,7 @@ public class Player extends Entity {
     private Long id;
     private int experience;
     private int nextLevelExp;
+    private int gold;
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Item> itemList = new ArrayList<>();
     @ManyToMany(cascade = CascadeType.ALL)
@@ -24,16 +25,26 @@ public class Player extends Entity {
         super();
     }
 
-    public void setQuestList(List<Quest> questList) {
-        this.questList = questList;
-    }
-
-    public Player(int health, int attack, String name, Float critical, int level, Long id, int experience, int nextLevelExp) {
+    public Player(int health, int attack, String name, Float critical, int level, Long id, int experience, int nextLevelExp, int gold) {
         super(health, attack, name, critical, level);
         this.id = id;
         this.experience = experience;
         this.nextLevelExp = nextLevelExp;
+        this.gold = gold;
     }
+
+    public int getGold() {
+        return gold;
+    }
+
+    public void setGold(int gold) {
+        this.gold = gold;
+    }
+
+    public void setQuestList(List<Quest> questList) {
+        this.questList = questList;
+    }
+
 
     public Player(int health, int attack, String name, Float critical, int level, Long id, int experience, int nextLevelExp, List<Item> itemList, List<Quest> questList) {
         super(health, attack, name, critical, level);
@@ -75,4 +86,6 @@ public class Player extends Entity {
     public void setNextLevelExp(int nextLevelExp) {
         this.nextLevelExp = nextLevelExp;
     }
+
+
 }
