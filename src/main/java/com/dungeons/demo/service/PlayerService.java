@@ -47,6 +47,12 @@ public class PlayerService {
     public String processWin(Player player, Enemy enemy) {
         player.setExperience(player.getExperience() + enemy.getRewardExp());
         player.setGold(player.getGold() + enemy.getRewardGold());
+        if (player.getExperience() >= player.getNextLevelExp()) {
+            player.setHealth(player.getHealth() + 2);
+            player.setAttack(player.getAttack() + 2);
+            player.setLevel(player.getLevel() + 1);
+            player.setNextLevelExp(player.getExperience() * 2);
+        }
         this.update(player);
         return "Wygrana!";
     }
