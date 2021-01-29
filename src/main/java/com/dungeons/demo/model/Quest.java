@@ -33,6 +33,7 @@ public class Quest {
         this.playerList = playerList;
     }
 
+    public  Quest(){}
 
     public Quest(Long id, int enemyCount, int rewardExp, int rewardGold) {
         this.id = id;

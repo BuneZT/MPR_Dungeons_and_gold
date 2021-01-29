@@ -17,6 +17,10 @@ public class Item extends Entity{
     )
     private List<Player> playerList = new ArrayList<>();
 
+    public Item(){
+        super();
+    }
+
     public Item(int health, int attack, String name, Float critical, int level, Long id, int cost) {
         super(health, attack, name, critical, level);
         this.id = id;
