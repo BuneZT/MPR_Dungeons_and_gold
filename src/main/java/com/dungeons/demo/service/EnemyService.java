@@ -57,4 +57,9 @@ public class EnemyService {
         return enemyList.get().get(rand.nextInt(enemyList.get().size()));
 
     }
+
+    public void deleteAll() {
+        enemyRepository.deleteAll();
+    }
+
 }

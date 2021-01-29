@@ -76,4 +76,9 @@ public class ItemService {
         this.playerService.update(player);
 
     }
+
+    public void deleteAll() {
+        itemRepository.deleteAll();
+    }
+
 }

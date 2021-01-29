@@ -64,4 +64,9 @@ public class PlayerService {
         return "Przegrana!";
     }
 
+    public void deleteAll() {
+        playerRepository.deleteAll();
+    }
+
+
 }
