@@ -27,15 +27,15 @@ public class DungeonService {
             throw new RuntimeException();
         }
 
-        Optional<Enemy> enemy = enemyService.getRandomEnemy(level);
+        Enemy enemy = enemyService.getRandomEnemy(level);
 
-        if (this.fight(player.get(), enemy.get())) {
+        if (this.fight(player.get(), enemy)) {
 
-            return this.playerService.processWin(player.get(), enemy.get());
+            return this.playerService.processWin(player.get(), enemy);
 
         }
 
-        return this.playerService.processFailure(player.get(), enemy.get());
+        return this.playerService.processFailure(player.get(), enemy);
 
     }
 
@@ -46,7 +46,7 @@ public class DungeonService {
         int enemyHealth = enemy.getHealth();
         while (playerHealth > 0) {
             enemyHealth -= player.getAttack() + player.getAllItemsAttack();
-            if (enemyHealth < 0) {
+            if (enemyHealth <= 0) {
                 return true;
             }
             playerHealth -= enemy.getAttack();

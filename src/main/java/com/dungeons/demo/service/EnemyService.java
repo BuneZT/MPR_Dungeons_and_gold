@@ -45,9 +45,16 @@ public class EnemyService {
         return enemyRepository.findById(id);
     }
 
-    public Optional<Enemy> getRandomEnemy(int level) {
-        Random rand = new Random(); //instance of random class
+    public Enemy getRandomEnemy(int level) {
+        Random rand = new Random();
+        Optional<List<Enemy>> enemyList = enemyRepository.findAllByLevel(level);
 
-        return enemyRepository.findByLevel(level);
+        if (enemyList.get().isEmpty()) {
+            throw new RuntimeException();
+
+        }
+
+        return enemyList.get().get(rand.nextInt(enemyList.get().size()));
+
     }
 }
