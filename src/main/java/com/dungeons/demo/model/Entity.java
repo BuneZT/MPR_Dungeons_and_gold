@@ -13,7 +13,6 @@ public class Entity {
     private int health;
     private int attack;
     private String name;
-    private Float critical;
     private int level;
 
     public Entity(int health, int attack, String name, int level, Long id) {
@@ -21,7 +20,6 @@ public class Entity {
         this.health = health;
         this.attack = attack;
         this.name = name;
-        this.critical = critical;
         this.level = level;
     }
 
@@ -52,13 +50,6 @@ public class Entity {
         this.name = name;
     }
 
-    public Float getCritical() {
-        return critical;
-    }
-
-    public void setCritical(Float critical) {
-        this.critical = critical;
-    }
 
     public int getLevel() {
         return level;
