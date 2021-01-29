@@ -5,10 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @javax.persistence.Entity
-public class Item extends Entity{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Item extends Entity {
     private int cost;
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
@@ -17,30 +14,21 @@ public class Item extends Entity{
     )
     private List<Player> playerList = new ArrayList<>();
 
-    public Item(){
+    public Item() {
         super();
     }
 
-    public Item(int health, int attack, String name, Float critical, int level, Long id, int cost) {
-        super(health, attack, name, critical, level);
-        this.id = id;
+    public Item(int health, int attack, String name, int level, Long id, int cost) {
+        super(health, attack, name, level, id);
         this.cost = cost;
     }
 
-    public Item(int health, int attack, String name, Float critical, int level, Long id, int cost, List<Player> playerList) {
-        super(health, attack, name, critical, level);
-        this.id = id;
+    public Item(int health, int attack, String name, int level, Long id, int cost, List<Player> playerList) {
+        super(health, attack, name, level, id);
         this.cost = cost;
         this.playerList = playerList;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public int getCost() {
         return cost;

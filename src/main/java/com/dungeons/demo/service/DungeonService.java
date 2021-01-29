@@ -41,10 +41,11 @@ public class DungeonService {
 
     private Boolean fight(Player player, Enemy enemy) {
 
-        int playerHealth = player.getHealth();
+
+        int playerHealth = player.getHealth() + player.getAllItemsHealth();
         int enemyHealth = enemy.getHealth();
         while (playerHealth > 0) {
-            enemyHealth -= player.getAttack();
+            enemyHealth -= player.getAttack() + player.getAllItemsAttack();
             if (enemyHealth < 0) {
                 return true;
             }

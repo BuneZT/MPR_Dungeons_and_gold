@@ -48,6 +48,6 @@ public class EnemyService {
     public Optional<Enemy> getRandomEnemy(int level) {
         Random rand = new Random(); //instance of random class
 
-        return enemyRepository.getRandomEnemy(level, rand.nextInt());
+        return enemyRepository.findByLevel(level);
     }
 }

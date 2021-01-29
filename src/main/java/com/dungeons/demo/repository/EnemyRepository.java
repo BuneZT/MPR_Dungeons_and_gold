@@ -10,6 +10,6 @@ import java.util.Optional;
 @Repository
 public interface EnemyRepository extends JpaRepository<Enemy, Long> {
 
-    @Query("SELECT e from Enemy e where e.level = :level ORDER BY :random")
-    Optional<Enemy> getRandomEnemy(int level, int random);
+    Optional<Enemy> findByLevel(int level);
+
 }
