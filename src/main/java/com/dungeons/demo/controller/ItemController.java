@@ -55,7 +55,7 @@ public class ItemController {
 
     }
 
-    @GetMapping("/{itemId}/{playerId}")
+    @GetMapping("sell/{itemId}/{playerId}")
     public ResponseEntity<Void> sell(@PathVariable Long itemId, @PathVariable Long playerId) {
         itemService.sell(itemId, playerId);
         return ResponseEntity.ok().build();

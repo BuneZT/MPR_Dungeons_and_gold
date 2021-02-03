@@ -19,7 +19,7 @@ public class DungeonController {
 
     }
 
-    @GetMapping("/{level}/{playerId}")
+    @GetMapping("enter/{level}/{playerId}")
     public ResponseEntity<String> enterDungeon(@PathVariable int level, @PathVariable Long playerId) {
         return ResponseEntity.ok(dungeonService.enter(playerId, level));
 

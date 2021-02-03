@@ -2,10 +2,7 @@ package com.dungeons.demo.model;
 
 import javax.persistence.*;
 
-@javax.persistence.Entity
-@Inheritance(
-        strategy = InheritanceType.JOINED
-)
+@MappedSuperclass
 public class Entity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
